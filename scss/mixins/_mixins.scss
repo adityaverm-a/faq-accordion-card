@@ -1,0 +1,10 @@
+@mixin gradient($direction, $colors_gradient) {
+     background: linear-gradient(
+          $direction,
+          $colors_gradient
+     );
+}
+
+@mixin transform($property) {
+     transform: $property;
+}

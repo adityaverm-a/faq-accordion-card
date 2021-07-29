@@ -1,0 +1,120 @@
+.faq-container {
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     margin: 6rem 10rem;
+     background: $white;
+     border-radius: 25px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     height: auto;
+     max-width: 85%;
+     overflow: hidden;
+
+     @media screen and (max-width: 768px) {
+          flex-direction: column;
+          margin: 7rem auto;
+          overflow: visible;
+     }
+}
+
+#accordion-container {
+     margin-top: 5rem;
+     margin-bottom: 4rem;
+     padding-bottom: 2rem;
+     width: 50%;
+
+     @media screen and (max-width: 768px) {
+          text-align: center;
+          margin-bottom: 1.2rem;
+          padding: 1.2rem;
+          padding-bottom: 2rem;
+          width: 100%;
+     }
+}
+
+.accordion__title {
+     padding-top: 0.5rem;
+     padding-bottom: 0.7rem;
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: $verydark_desaturated_blue;
+
+     @media screen and (max-width: 768px) {
+          text-align: center;
+     }
+}
+
+.accordion__question {
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+     background-color: transparent;
+     border: none;
+     font-size: 1.2rem;
+     text-align: left;
+     border-bottom: 2px solid $light_grayish_blue;
+     width: 90%;
+     color: $verydark_garyish_blue;
+
+     &:after {
+          content: url('/images/icon-arrow-down.svg');
+          float: right;
+          transform: rotate(0);
+          transition: 0.4s;
+     }
+
+     &--active {
+          color: $verydark_desaturated_blue;
+          font-weight: 700;
+          border: none;
+     }
+
+     &--active:after {
+          float: right;
+          transform: rotate(180deg);
+     }
+
+     &:focus {
+          outline: none;
+     }
+
+     @media screen and (max-width: 768px) {
+          font-size: 0.8rem;
+          width: 100%;
+     }
+
+     &:hover {
+          @media screen and (min-width: 992px) {
+               cursor: pointer;
+               color: $softred;
+          }
+     }
+}
+
+.accordion__answer {
+     display: none;
+     margin-top: 0;
+     padding-left: 0.5rem;
+     padding-right: 2.5rem;
+     color: $dark_grayish_blue;
+     font-weight: 400;
+     text-align: left;
+     transform: max-height 0.4s;
+     width: 90%;
+
+     &--active {
+          display: block;
+          max-height: 300px;
+          line-height: 1.5;
+          overflow: auto;
+          font-size: 1rem;
+          padding-bottom: 1rem;
+          border-bottom: 2px solid $light_grayish_blue;
+
+          @media screen and (max-width: 768px) {
+               margin-right: 0.5rem;
+               font-size: 0.8rem;
+               width: 100%;
+          }
+     }
+}
